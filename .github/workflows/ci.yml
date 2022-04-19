@@ -48,6 +48,8 @@ jobs:
                     - '7.2'
                     - '7.3'
                     - '7.4'
+                    - '8.0'
+                    - '8.1'
 
         steps:
             -
@@ -111,6 +113,8 @@ jobs:
                     - '7.2'
                     - '7.3'
                     - '7.4'
+                    - '8.0'
+                    - '8.1'
                 composer-dependencies:
                     - 'highest'
                     - 'lowest'
@@ -146,7 +150,7 @@ jobs:
                     COVERALLS_PARALLEL: true
                     COVERALLS_FLAG_NAME: 'php-${{ matrix.php-version }}+${{ matrix.composer-dependencies }}-dependencies'
                 run: |
-                    wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.4.3/php-coveralls.phar
+                    wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.5.2/php-coveralls.phar
                     php php-coveralls.phar --verbose --config build/coveralls.yml
 
     finish_coveralls:
